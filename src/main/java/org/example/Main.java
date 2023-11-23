@@ -1,8 +1,9 @@
 package org.example;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        Carrinho carrinho = new Carrinho();
         Eletronico laptop1 = new Eletronico("Laptop", 199.99, "Não é muito bom não", "01/01/2024");
         Eletronico smartphone1 = new Eletronico("Smartphone", 299.99, "Ótima câmera", "01/01/2024");
         Eletronico headphones1 = new Eletronico("Headphones", 49.99, "Qualidade de som excepcional", "01/01/2024");
@@ -25,10 +26,12 @@ public class Main {
         Vestuario jaquetaCouro1 = new Vestuario("Jaqueta de Couro", 149.99, "Estilo atemporal", Tamanho.G, "Marrom");
         Vestuario saiaPlissada1 = new Vestuario("Saia Plissada", 29.99, "Elegância feminina", Tamanho.P, "Verde");
 
+        Carrinho carrinho = new Carrinho();
 
-        carrinho.adicionarProduto(consoleDeJogos1);
+        carrinho.adicionarProduto(tablet1);
+        carrinho.adicionarProduto(roupa1);
 
         carrinho.listarProdutos();
-
+        carrinho.totalCompra();
     }
 }
