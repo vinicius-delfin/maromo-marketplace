@@ -1,12 +1,10 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 public class Carrinho {
-    private List<Produto> produtos = new ArrayList<>();
+    private final List<Produto> produtos = new LinkedList<>();
 
     public void adicionarProduto(Produto produto) {
         produtos.add(produto);
@@ -19,17 +17,25 @@ public class Carrinho {
     }
 
     public void listarProdutos() {
-        for (Produto produto : produtos) {
-            System.out.println(produto.getNome());
+        if (produtos.size() == 0) {
+            System.out.println("O carrinho está vazio!");
+        } else {
+            for (Produto produto : produtos) {
+                System.out.println(produto.getNome());
+            }
         }
     }
 
     public void totalCompra() {
-        double total = 0;
-        for (Produto produto : produtos) {
-            total += produto.getPreco();
+        if (produtos.size() == 0) {
+            System.out.println("O carrinho está vazio!");
+        } else {
+            double total = 0;
+            for (Produto produto : produtos) {
+                total += produto.getPreco();
+            }
+            System.out.println("O valor total da compra é R$" + total);
         }
-        System.out.println("O valor total da compra é R$" + total);
     }
 
 }

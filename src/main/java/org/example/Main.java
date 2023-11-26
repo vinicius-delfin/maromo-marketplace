@@ -1,37 +1,93 @@
 package org.example;
 
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        Eletronico laptop1 = new Eletronico("Laptop", 199.99, "Não é muito bom não", "01/01/2024");
-        Eletronico smartphone1 = new Eletronico("Smartphone", 299.99, "Ótima câmera", "01/01/2024");
-        Eletronico headphones1 = new Eletronico("Headphones", 49.99, "Qualidade de som excepcional", "01/01/2024");
-        Eletronico tablet1 = new Eletronico("Tablet", 149.99, "Bateria de longa duração", "01/01/2024");
-        Eletronico smartwatch1 = new Eletronico("Smartwatch", 79.99, "Monitoramento de saúde avançado", "01/01/2024");
-        Eletronico cameraDigital1 = new Eletronico("Câmera Digital", 199.99, "Zoom poderoso", "01/01/2024");
-        Eletronico consoleDeJogos1 = new Eletronico("Console de Jogos", 399.99, "Gráficos de alta qualidade", "01/01/2024");
-        Eletronico impressora1 = new Eletronico("Impressora", 129.99, "Imprime em alta resolução", "01/01/2024");
-        Eletronico monitor1 = new Eletronico("Monitor", 159.99, "Tela de grande tamanho", "01/01/2024");
-        Eletronico roteador1 = new Eletronico("Roteador", 79.99, "Alcance de sinal excepcional", "01/01/2024");
+    public static void main(String[] args) throws InterruptedException {
+        Map<String, Produto> produtos = new HashMap<>();
+        produtos.put("celular", new Eletronico("Celular", 999.99, "Smartphone avançado", "01/01/2023"));
+        produtos.put("laptop", new Eletronico("Laptop", 1499.99, "Notebook de alta performance", "02/01/2023"));
+        produtos.put("fonesdeouvido", new Eletronico("Fones de Ouvido", 79.99, "Fones sem fio confortáveis", "03/01/2023"));
+        produtos.put("televisão", new Eletronico("Televisão", 799.99, "TV 4K com HDR", "04/01/2023"));
+        produtos.put("cameradigital", new Eletronico("Câmera Digital", 499.99, "Câmera de alta resolução", "05/01/2023"));
+        produtos.put("impressora", new Eletronico("Impressora", 199.99, "Impressora a laser colorida", "06/01/2023"));
+        produtos.put("consoledevideogame", new Eletronico("Console de Videogame", 299.99, "Console de última geração", "07/01/2023"));
+        produtos.put("monitor", new Eletronico("Monitor", 249.99, "Monitor LED de 24 polegadas", "08/01/2023"));
+        produtos.put("tablet", new Eletronico("Tablet", 199.99, "Tablet leve e portátil", "09/01/2023"));
+        produtos.put("cadeiradeescritório", new Eletronico("Cadeira de Escritório", 129.99, "Cadeira ergonômica", "10/01/2023"));
 
-        Vestuario roupa1 = new Vestuario("Vestido da Gucci", 20000.00, "Caro demais, ta loko", Tamanho.P, "Azul Coruja");
-        Vestuario camiseta1 = new Vestuario("Camiseta Estampada", 29.99, "Confortável para o dia a dia", Tamanho.M, "Branco");
-        Vestuario calcaJeans1 = new Vestuario("Calça Jeans Skinny", 59.99, "Estilo moderno", Tamanho.G, "Azul Escuro");
-        Vestuario tenisEsportivo1 = new Vestuario("Tênis Esportivo", 79.99, "Amortecimento superior", Tamanho.GG, "Preto");
-        Vestuario moletom1 = new Vestuario("Moletom com Capuz", 49.99, "Perfeito para o inverno", Tamanho.G, "Cinza");
-        Vestuario vestidoCasual1 = new Vestuario("Vestido Casual", 39.99, "Ideal para ocasiões informais", Tamanho.M, "Rosa");
-        Vestuario gravata1 = new Vestuario("Gravata de Seda", 34.99, "Elegante e clássica", Tamanho.PP, "Preto");
-        Vestuario meiaEsportiva1 = new Vestuario("Meia Esportiva", 9.99, "Conforto durante os exercícios", Tamanho.M, "Branco");
-        Vestuario jaquetaCouro1 = new Vestuario("Jaqueta de Couro", 149.99, "Estilo atemporal", Tamanho.G, "Marrom");
-        Vestuario saiaPlissada1 = new Vestuario("Saia Plissada", 29.99, "Elegância feminina", Tamanho.P, "Verde");
+        produtos.put("camiseta", new Vestuario("Camiseta", 29.99, "Camiseta casual", Tamanho.M, "Branca"));
+        produtos.put("calçajeans", new Vestuario("Calça Jeans", 59.99, "Calça jeans moderna", Tamanho.G, "Azul"));
+        produtos.put("vestido", new Vestuario("Vestido", 39.99, "Vestido elegante", Tamanho.P, "Preto"));
+        produtos.put("blusademoletom", new Vestuario("Blusa de Moletom", 49.99, "Blusa de moletom confortável", Tamanho.GG, "Cinza"));
+        produtos.put("shorts", new Vestuario("Shorts", 24.99, "Shorts esportivo", Tamanho.M, "Azul Marinho"));
+        produtos.put("sapato", new Vestuario("Sapato", 79.99, "Sapato social", Tamanho.GG, "Preto"));
+        produtos.put("jaqueta", new Vestuario("Jaqueta", 69.99, "Jaqueta de couro", Tamanho.G, "Marrom"));
+        produtos.put("saia", new Vestuario("Saia", 34.99, "Saia leve", Tamanho.P, "Rosa"));
+        produtos.put("meia", new Vestuario("Meia", 5.99, "Meia confortável", Tamanho.PP, "Branca"));
+        produtos.put("cachecol", new Vestuario("Cachecol", 19.99, "Cachecol de lã", Tamanho.PP, "Vermelho"));
 
         Carrinho carrinho = new Carrinho();
+        Scanner sc = new Scanner(System.in);
 
-        carrinho.adicionarProduto(tablet1);
-        carrinho.adicionarProduto(roupa1);
+        System.out.println("===================MAROMO MARKETPLACE===================");
+        System.out.println("BEM-VINDO A LOJA OFICIAL DO MAROMO!");
 
-        carrinho.listarProdutos();
-        carrinho.totalCompra();
+        do {
+            try {
+                System.out.println("========================================================");
+                System.out.println("1 - Adicionar um produto no carrinho");
+                System.out.println("2 - Remover um produto do carrinho");
+                System.out.println("3 - Listar os itens no carrinho");
+                System.out.println("4 - Calcular o total do compra");
+                System.out.println("0 - Finalizar sessão");
+                System.out.print("Escolha: ");
+                int opcao = Integer.parseInt(sc.nextLine());
+
+                switch (opcao) {
+                    case 1:
+                        System.out.println("========================================================");
+                        System.out.println("Digite o nome do produto que deseja adicionar:");
+                        Produto produtoAdicionado = produtos.get(sc.nextLine().toLowerCase().replace(" ", ""));
+                        carrinho.adicionarProduto(produtoAdicionado);
+                        break;
+                    case 2:
+                        System.out.println("========================================================");
+                        System.out.println("Digite o nome do produto que deseja remover:");
+                        Produto produtoRemovido = produtos.get(sc.nextLine().toLowerCase().replace(" ", ""));
+                        carrinho.removerProduto(produtoRemovido);
+                        break;
+                    case 3:
+                        System.out.println("========================================================");
+                        try {
+                            carrinho.listarProdutos();
+                        } catch (Exception e) {
+                            System.out.println("========================================================");
+                            System.out.println("[ERRO] Produto não encontrado!");
+                        }
+                        break;
+                    case 4:
+                        System.out.println("========================================================");
+                        carrinho.totalCompra();
+                        break;
+                    case 0:
+                        System.out.println("========================================================");
+                        System.out.println("Saindo...");
+                        Thread.sleep(1000);
+                        return;
+                    default:
+                        System.out.println("========================================================");
+                        System.out.println("Opcão inválida! Tente novamente");
+                        break;
+                }
+            } catch (Exception e) {
+                System.out.println("========================================================");
+                System.out.println("[ERRO] Digite apenas números inteiros!");
+            }
+        } while (true);
+
     }
 }
