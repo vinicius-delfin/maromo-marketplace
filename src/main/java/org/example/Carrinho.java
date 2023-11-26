@@ -21,7 +21,17 @@ public class Carrinho {
             System.out.println("O carrinho está vazio!");
         } else {
             for (Produto produto : produtos) {
-                System.out.println(produto.getNome());
+                System.out.println("Nome: " + produto.getNome());
+                System.out.println("R$" + produto.getPreco());
+                System.out.println(produto.getDescricao());
+
+                if (produto instanceof Eletronico) {
+                    System.out.println("Garantia: " + ((Eletronico) produto).getGarantia());
+                } else {
+                    System.out.println("Tamanho: " + ((Vestuario) produto).getTamanho());
+                    System.out.println("Cor: " + ((Vestuario) produto).getCor());
+                }
+                System.out.println("========================================================");
             }
         }
     }
