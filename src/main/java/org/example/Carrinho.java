@@ -8,14 +8,24 @@ public class Carrinho {
     private final List<Produto> produtos = new LinkedList<>();
 
     public void adicionarProduto(Produto produto) {
-        produtos.add(produto);
-        System.out.println("Produto adicionado com sucesso!\n");
-        imprimirInformacoes(produto);
+        if (produto != null) {
+            produtos.add(produto);
+            System.out.println("Produto adicionado com sucesso!\n");
+            imprimirInformacoes(produto);
+        } else {
+            System.out.println("Produto não encontrado!");
+        }
+
     }
 
     public void removerProduto(Produto produto) {
-        produtos.remove(produto);
-        System.out.println("Produto removido com sucesso!\n");
+        if (produto != null && produtos.contains(produto)) {
+            produtos.remove(produto);
+            System.out.println("Produto removido com sucesso!\n");
+        } else {
+            System.out.println("Produto não encontrado!");
+        }
+
     }
 
     public void listarProdutos() {
