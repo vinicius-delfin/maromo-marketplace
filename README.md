@@ -1,4 +1,4 @@
-# MAROMO MARKETPLACE
+# Nome do Software
 
 ## Índice
 
@@ -9,6 +9,7 @@
 5. [Resolução de Problemas](#resolução-de-problemas)
 6. [Licenciamento](#licenciamento)
 7. [Contato e Suporte](#contato-e-suporte)
+8. [Diagrama de Classe](#diagrama-de-classe)
 
 ## Introdução
 
@@ -99,3 +100,7 @@ sugestões ou discussões relacionadas ao desenvolvimento. Alternativamente, sin
 diretamente por e-mail através de [vinicius.delfin@gmail.com](mailto:vinicius.delfin@gmail.com). Estamos comprometidos em 
 garantir uma experiência positiva para os usuários e estamos prontos para oferecer suporte e assistência sempre que 
 necessário.
+
+## Diagrama de Classe
+
+![Diagrama](images/DiagramaDeClasse.png)
