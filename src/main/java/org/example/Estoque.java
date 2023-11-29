@@ -30,6 +30,7 @@ public class Estoque {
         produtos.put("cachecol", new Vestuario("Cachecol", 19.99, "Cachecol de lã", Tamanho.PP, "Vermelho"));
     }
 
+    //recebe uma chave e retorna o seu valor correspondente
     public Produto recebeKey(String key) {
         return produtos.get(key);
     }
