@@ -2,11 +2,10 @@ package org.example;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
+
 
 @Getter
 @Setter
-@ToString
 public class Vestuario extends Produto {
     private Tamanho tamanho;
     private String cor;
@@ -15,5 +14,10 @@ public class Vestuario extends Produto {
         super(nome, preco, descricao);
         this.tamanho = tamanho;
         this.cor = cor;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\nTamanho: " + this.tamanho + "\nCor: " + this.cor;
     }
 }

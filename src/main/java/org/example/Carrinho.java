@@ -13,7 +13,6 @@ public class Carrinho {
         imprimirInformacoes(produto);
     }
 
-    Scanner sc = new Scanner(System.in);
     public void removerProduto(Produto produto) {
         produtos.remove(produto);
         System.out.println("Produto removido com sucesso!\n");
@@ -33,24 +32,16 @@ public class Carrinho {
         if (produtos.isEmpty()) {
             System.out.println("O carrinho está vazio!");
         } else {
-            double total = 0;
-            for (Produto produto : produtos) {
-                total += produto.getPreco();
-            }
+            double total = produtos.stream().map(produto -> produto.getPreco()).reduce(0.0, (a, b) -> a + b);
             System.out.println("O valor total da compra é R$" + total);
         }
     }
 
     private static void imprimirInformacoes(Produto produto) {
-        System.out.println("Nome: " + produto.getNome());
-        System.out.println("R$" + produto.getPreco());
-        System.out.println("Descrição: " + produto.getDescricao());
-
         if (produto instanceof Eletronico) {
-            System.out.println("Garantia: " + ((Eletronico) produto).getGarantia());
+            System.out.println((Eletronico) produto);
         } else {
-            System.out.println("Tamanho: " + ((Vestuario) produto).getTamanho());
-            System.out.println("Cor: " + ((Vestuario) produto).getCor());
+            System.out.println((Vestuario) produto);
         }
         System.out.println("========================================================");
     }

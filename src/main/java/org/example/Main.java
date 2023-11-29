@@ -51,14 +51,12 @@ public class Main {
                     case 1:
                         System.out.println("========================================================");
                         System.out.println("Digite o nome do produto que deseja adicionar:");
-                        Produto produtoAdicionado = produtos.get(sc.nextLine().toLowerCase().replace(" ", ""));
-                        carrinho.adicionarProduto(produtoAdicionado);
+                        carrinho.adicionarProduto(produtos.get(sc.nextLine().toLowerCase().replace(" ", "")));
                         break;
                     case 2:
                         System.out.println("========================================================");
                         System.out.println("Digite o nome do produto que deseja remover:");
-                        Produto produtoRemovido = produtos.get(sc.nextLine().toLowerCase().replace(" ", ""));
-                        carrinho.removerProduto(produtoRemovido);
+                        carrinho.removerProduto(produtos.get(sc.nextLine().toLowerCase().replace(" ", "")));
                         break;
                     case 3:
                         System.out.println("========================================================");
@@ -88,6 +86,5 @@ public class Main {
                 System.out.println("[ERRO] Digite apenas números inteiros!");
             }
         } while (true);
-
     }
 }
